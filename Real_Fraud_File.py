@@ -217,7 +217,6 @@ class FraudDetection:
         self.quantityModificationn = StringVar(value="0.033")
         self.valuePerSecondd = StringVar(value="0.01442")
         self.lineItemVoidsPerPositionn = StringVar(value="0.42")
-        self.fraudd = StringVar()
 
         self.fff = Frame(self.ff, height="900", width="300")
         self.fff.pack(side=LEFT)
@@ -248,7 +247,7 @@ class FraudDetection:
         self.lineItemVoidsPerPositionnn = Entry(self.fff, textvariable=self.lineItemVoidsPerPositionn, width=35)
         self.lineItemVoidsPerPositionnn.pack(padx=20, pady=17)
 
-        self.frauddd = Entry(self.fff, textvariable=self.fraudd, width=35)
+        self.frauddd = Entry(self.fff, width=35)
         self.frauddd.pack(padx=20, pady=17)
         newWindow.mainloop()
 
@@ -271,12 +270,11 @@ class FraudDetection:
                                          float(scannedLineItemsPerSecondddd)
                                             , float(quantityModificationnnn), float(valuePerSecondddd),
                                          float(lineItemVoidsPerPositionnnn)]])
-        self.fraudd.set(self.Y_pred[len(self.Y_pred) - 1])
 
 
 
 
 root = Tk()
 root.title("FraudDetectionSystem")
-f = FraudDetection(root)
+f = FraudDetection()
 root.mainloop()
